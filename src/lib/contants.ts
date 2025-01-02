@@ -1,3 +1,6 @@
+export const BASE_API_URL =
+  "https://bytegrad.com/course-assets/projects/evento/api/events";
+
 export const HEADER_ROUTES = [
   {
     name: "Home",
@@ -17,5 +20,16 @@ export const FOOTER_ROUTES = [
   {
     name: "Privacy Policy",
     path: "/privacy-policy",
+  },
+];
+
+export const POPULAR_ROUTES = [
+  {
+    name: "Austin",
+    path: "/events/austin",
+  },
+  {
+    name: "Seattle",
+    path: "/events/seattle",
   },
 ];
