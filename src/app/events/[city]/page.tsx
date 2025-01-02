@@ -1,4 +1,5 @@
 import H1 from "@/components/h1";
+import EventsList from "@/components/events-list";
 import { BASE_API_URL } from "@/lib/contants";
 import { EventsApiResponse } from "@/lib/types";
 import { capitalizeString } from "@/lib/utility";
@@ -13,7 +14,7 @@ export default async function EventsPage({ params }: EventsPageProps) {
   const { city } = params;
 
   const result = await fetch(`${BASE_API_URL}?city=${city}`);
-  const events: EventsApiResponse = await result.json();
+  const events: EventsApiResponse[] = await result.json();
 
   return (
     <main className="flex min-h-[110vh] flex-col items-center px-[20px] py-24">
@@ -22,9 +23,7 @@ export default async function EventsPage({ params }: EventsPageProps) {
         {city !== "all" && `Events in ${capitalizeString(city)}`}
       </H1>
 
-      {events.map((event) => (
-        <section key={event.id}>{event.name}</section>
-      ))}
+      <EventsList events={events} />
     </main>
   );
 }

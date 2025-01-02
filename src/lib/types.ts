@@ -8,4 +8,4 @@ export type EventsApiResponse = {
   organizerName: string;
   imageUrl: string;
   description: string;
-}[];
+};
