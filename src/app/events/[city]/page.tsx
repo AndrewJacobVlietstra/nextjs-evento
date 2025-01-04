@@ -1,7 +1,7 @@
 import H1 from "@/components/h1";
 import EventsList from "@/components/events-list";
 import { BASE_API_URL } from "@/lib/contants";
-import { EventsApiResponse } from "@/lib/types";
+import { EventApiResponse } from "@/lib/types";
 import { capitalizeString } from "@/lib/utility";
 
 type EventsPageProps = {
@@ -14,7 +14,7 @@ export default async function EventsPage({ params }: EventsPageProps) {
   const { city } = params;
 
   const result = await fetch(`${BASE_API_URL}?city=${city}`);
-  const events: EventsApiResponse[] = await result.json();
+  const events: EventApiResponse[] = await result.json();
 
   return (
     <main className="flex min-h-[110vh] flex-col items-center px-[20px] py-24">

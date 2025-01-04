@@ -1,4 +1,4 @@
-export type EventsApiResponse = {
+export type EventApiResponse = {
   id: number;
   name: string;
   slug: string;

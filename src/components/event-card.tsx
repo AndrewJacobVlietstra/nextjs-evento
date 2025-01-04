@@ -1,9 +1,9 @@
-import { EventsApiResponse } from "@/lib/types";
+import { EventApiResponse } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
 type EventCardProps = {
-  event: EventsApiResponse;
+  event: EventApiResponse;
 };
 
 export default function EventCard({ event }: EventCardProps) {
@@ -12,7 +12,7 @@ export default function EventCard({ event }: EventCardProps) {
       href={`/event/${event.slug}`}
       className="h-[380px] max-w-[500px] flex-1 basis-80"
     >
-      <section className="relative flex h-full w-full flex-1 basis-80 flex-col overflow-hidden rounded-xl bg-white/[3%] transition hover:scale-105 active:scale-[1.02]">
+      <section className="state-effects relative flex h-full w-full flex-1 basis-80 flex-col overflow-hidden rounded-xl bg-white/[3%]">
         <Image
           src={event.imageUrl}
           alt={event.name}

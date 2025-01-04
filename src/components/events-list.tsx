@@ -1,8 +1,8 @@
-import { EventsApiResponse } from "@/lib/types";
+import { EventApiResponse } from "@/lib/types";
 import EventCard from "./event-card";
 
 type EventsListProps = {
-  events: EventsApiResponse[];
+  events: EventApiResponse[];
 };
 
 export default function EventsList({ events }: EventsListProps) {
