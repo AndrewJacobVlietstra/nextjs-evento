@@ -1,6 +1,6 @@
 import { EventApiResponse } from "@/lib/types";
-import EventCard from "./event-card";
 import { BASE_API_URL } from "@/lib/contants";
+import EventCard from "./event-card";
 
 type EventsListProps = {
   city: string;
