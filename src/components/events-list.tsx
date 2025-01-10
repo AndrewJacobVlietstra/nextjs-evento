@@ -1,14 +1,12 @@
-import { EventApiResponse } from "@/lib/types";
-import { BASE_API_URL } from "@/lib/contants";
 import EventCard from "./event-card";
+import { getEvents } from "@/lib/utility";
 
 type EventsListProps = {
   city: string;
 };
 
 export default async function EventsList({ city }: EventsListProps) {
-  const result = await fetch(`${BASE_API_URL}?city=${city}`);
-  const events: EventApiResponse[] = await result.json();
+  const events = await getEvents(city);
 
   return (
     <section className="flex max-w-[1100px] flex-wrap justify-center gap-10 px-[20px]">
