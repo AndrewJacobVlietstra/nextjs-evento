@@ -12,7 +12,7 @@ type Props = {
 };
 
 export const generateMetadata = ({ params }: Props): Metadata => {
-  const city = params.city;
+  const { city } = params;
 
   return {
     title:

@@ -1,7 +1,7 @@
 import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { BASE_API_URL } from "./contants";
-import { EventApiResponse } from "./types";
+import { EventoEvent } from "@prisma/client";
 
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
@@ -17,14 +17,14 @@ export const sleep = async (delay = 1000) => {
 
 export const getEvents = async (city: string) => {
   const result = await fetch(`${BASE_API_URL}?city=${city}`);
-  const events: EventApiResponse[] = await result.json();
+  const events: EventoEvent[] = await result.json();
 
   return events;
 };
 
 export const getEvent = async (slug: string) => {
   const result = await fetch(`${BASE_API_URL}/${slug}`);
-  const event: EventApiResponse = await result.json();
+  const event: EventoEvent = await result.json();
 
   return event;
 };

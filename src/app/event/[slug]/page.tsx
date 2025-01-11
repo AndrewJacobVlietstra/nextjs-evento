@@ -1,6 +1,4 @@
 import H1 from "@/components/h1";
-import { BASE_API_URL } from "@/lib/contants";
-import { EventApiResponse } from "@/lib/types";
 import { getEvent } from "@/lib/utility";
 import { Metadata } from "next";
 import Image from "next/image";
