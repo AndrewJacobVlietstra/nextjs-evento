@@ -5,10 +5,10 @@ import { EVENTS_LIMIT_PER_PAGE } from "@/lib/contants";
 
 type EventsListProps = {
   city: string;
-  page: number;
+  page?: number;
 };
 
-export default async function EventsList({ city, page }: EventsListProps) {
+export default async function EventsList({ city, page = 1 }: EventsListProps) {
   const events = await getEvents(city, page);
 
   const previousPath = page > 1 ? `/events/${city}/?page=${page - 1}` : "";
