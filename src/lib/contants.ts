@@ -33,3 +33,5 @@ export const POPULAR_ROUTES = [
     path: "/events/seattle",
   },
 ];
+
+export const EVENTS_LIMIT_PER_PAGE = 6;
