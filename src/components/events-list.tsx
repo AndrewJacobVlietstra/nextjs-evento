@@ -1,6 +1,6 @@
 import EventCard from "./event-card";
 import PaginationControls from "./pagination-controls";
-import { getEvents } from "@/lib/utility";
+import { getEvents } from "@/lib/server-utils";
 import { EVENTS_LIMIT_PER_PAGE } from "@/lib/contants";
 
 type EventsListProps = {

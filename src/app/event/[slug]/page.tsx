@@ -1,5 +1,5 @@
 import H1 from "@/components/h1";
-import { getEvent } from "@/lib/utility";
+import { getEvent } from "@/lib/server-utils";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -20,6 +20,15 @@ export const generateMetadata = async ({
     title: event.name,
   };
 };
+
+export async function generateStaticParams() {
+  // make particular popular routes statically generated
+  return [
+    { slug: "dj-practice-session" },
+    { slug: "science-space-expo" },
+    { slug: "global-food-festival" },
+  ];
+}
 
 export default async function EventPage({ params }: Props) {
   const { slug } = params;
